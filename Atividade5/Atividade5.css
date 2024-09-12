@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mudarcor{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+@media screen and (max-width:420px) {
+    .mudarcor{
+        background-color: #33484e;
+    }
+    .mudarcor h2::before{
+
+        content:"Cinza"
+    }
+}
+
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+    .mudarcor{
+        background-color:coral;
+    }
+    .mudarcor h2::before{
+        content:"Laranja"
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .mudarcor{
+        background-color:blueviolet;
+    }
+    .mudarcor h2::before{
+        content:"Lilás"
+    }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1080px) {
+    .mudarcor{
+        background-color:deeppink;
+    }
+    .mudarcor h2::before{
+        content:"Rosa"
+    }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1366px) {
+    .mudarcor{
+        background-color:blue;
+    }
+    .mudarcor h2::before{
+        content:"Azul"
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+    .mudarcor{
+        background-color:yellow;
+    }
+    .mudarcor h2::before{
+        content:"Amarelo"
+    }
+}
+
+@media screen and (min-width: 1921px){
+    .mudarcor{
+        background-color:green;
+    }
+    .mudarcor h2::before{
+        content:"Verde"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
