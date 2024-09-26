@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Jokenpo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jokenpo.js"></script>
+</head>
+
+<body>
+    <div class="conteudo">
+        <div class="topo">
+            <h1>Jogo pedra, papel e tesoura</h1>
+        </div>
+
+        <div class="meio">
+            <div class="container">
+                <div class="caixa a">
+                    <img src="pedra.jpg" class="imagem" alt="Pedra">
+                    <div class="botao">
+                        <input type="button" value="Pedra" onclick="selecionarOpcao('pedra')">
+                    </div>
+                </div>
+                
+                <div class="caixa a">
+                    <img src="papel.jpg" class="imagem" alt="Papel">
+                    <div class="botao">
+                        <input type="button" value="Papel" onclick="selecionarOpcao('papel')">
+                    </div>
+                </div> 
+
+                <div class="caixa a">
+                    <img src="tesoura.jpg" class="imagem" alt="Tesoura">
+                    <div class="botao">
+                        <input type="button" value="Tesoura" onclick="selecionarOpcao('tesoura')">
+                    </div>
+                </div> 
+            </div> 
+            <p class="result"></p>
+        </div>
+    </div>
+</body>
+</html>

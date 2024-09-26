@@ -1,0 +1,19 @@
+.topo {
+    text-align: center; /* Centraliza o texto dentro do contêiner topo */
+    margin: 20px 0; /* Adiciona um espaço em cima e embaixo do título */
+}
+
+h1 {
+    font-size: 2em; /* Ajusta o tamanho da fonte do título, se necessário */
+}
+
+.container {
+    display: flex;            
+    justify-content: center;   
+    align-items: center;         
+    gap: 20px;                   
+}
+
+.caixa {
+    text-align: center;         
+}
