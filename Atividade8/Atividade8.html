@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css"/>
+    <script src="funcionalidade.js"></script>
+    <title>Formulário de Opiniões</title>
+</head>
+<body>
+    <header>
+        <h1>Pesquisa de Satisfação</h1>
+    </header>
+
+    <main class="main">
+        <h2>Ajude-nos respondendo ao nosso formulário!</h2>        
+        <p>Idade: <input id="campoIdade" type="number" min="0"></p>
+        <p>Gênero:   
+            <label><input type="radio" name="genero" id="Feminino">Feminino</label>
+            <label><input type="radio" name="genero" id="opcaoMasculino">Masculino</label>
+        </p>
+        <p>
+            Qual sua avaliação sobre o filme?<br><br>
+            <label><input type="radio" name="nota" id="notaPessimo">Péssimo</label>
+            <label><input type="radio" name="nota" id="notaRegular">Regular</label>
+            <label><input type="radio" name="nota" id="notaBom">Bom</label>
+            <label><input type="radio" name="nota" id="notaOtimo">Ótimo</label><br><br>
+            <button class="btn" onclick="registrarDados()">Adicionar Resposta</button>
+            <button class="btn" onclick="exibirResultados()">Ver Resultados</button>
+            <button class="btn" onclick="reiniciar()">Limpar Formulário</button>          
+        </p>
+        <p id="totalParticipantes">Participantes contados: 0 de 45</p>
+    </main>
+    <section>
+        <div class="resultado-final">
+            <h2 id="resultadoTitulo"></h2>
+            <p id="resultadoTexto"></p>
+        </div>
+    </section>   
+</body>
+</html>

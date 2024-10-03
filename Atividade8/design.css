@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4CAF50; 
+}
+
+.main {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px; 
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+
+input[type="number"],
+input[type="radio"] {
+    margin: 5px 0;
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 25%; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #45a049; 
+}
+
+
+.resultado-final {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#resultadoTitulo {
+    font-size: 1.5em;
+    color: #333;
+}
+
+#resultadoTexto {
+    font-size: 1em;
+    color: #666;
+}
+
+
+#totalParticipantes {
+    font-weight: bold;
+    margin-top: 10px;
+}
