@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+    <title>Atividade 10</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Atividade 10</h1>
+    </header>
+
+    <main class="main">
+        <h2>Verificação de Números</h2>
+        Número 1: <input id="numero1" type="number"> <br />
+        Número 2: <input id="numero2" type="number"> <br />
+        Número 3: <input id="numero3" type="number"> <br />
+        <button class="botao" onclick="maior()" id="maior">Maior número</button>
+        <button class="botao" onclick="ordenacao()" id="ordem">Ordem crescente</button>
+
+        <h2>Verificação de Palíndromo</h2>
+        String: <input id="stringInput" type="text"> <br />
+        <button class="botao" onclick="verificaPalindromo()">Verificar Palíndromo</button>
+
+        <h2>Verificação de Triângulo</h2>
+        Lado 1: <input id="lado1" type="number"> <br />
+        Lado 2: <input id="lado2" type="number"> <br />
+        Lado 3: <input id="lado3" type="number"> <br />
+        <button class="botao" onclick="verificaTriangulo()">Verificar Triângulo</button>
+    </main>
+
+    <section>
+        <div class="result">
+            <p id="resposta"></p>
+        </div>
+    </section>
+</body>
+</html>
