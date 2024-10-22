@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ricardo Gomes Marques">
+    <title>Atividade 11</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Funcionário</h1>
+    </header>
+
+    <main>
+        <script>
+            var v_matricula = prompt("Insira a matrícula do funcionário: ");
+            var v_nome = prompt("Insira o nome do funcionário: ");
+            var v_funcao = prompt("Insira a função do funcionário: ");
+
+            // 1. Forma: Novo Objeto
+            var funcionario1 = new Object();
+            funcionario1.matricula = v_matricula;
+            funcionario1.nome = v_nome;
+            funcionario1.funcao = v_funcao;
+
+            alert(`Matrícula: ${funcionario1.matricula}\nNome: ${funcionario1.nome}\nFunção: ${funcionario1.funcao}`);
+
+            // 2. Forma: Literal
+            var funcionario2 = {
+                matricula: v_matricula,
+                nome: v_nome,
+                funcao: v_funcao
+            };
+            alert(`Matrícula: ${funcionario2.matricula}\nNome: ${funcionario2.nome}\nFunção: ${funcionario2.funcao}`);
+
+            // 3. Forma: Função Construtora
+            function Funcionario() {
+                this.matricula = "";
+                this.nome = "";
+                this.funcao = "";
+                
+                this.setMatricula = function(value) {
+                    this.matricula = value;
+                };
+                this.getMatricula = function() {
+                    return this.matricula;
+                };
+                this.setNome = function(value) {
+                    this.nome = value;
+                };
+                this.getNome = function() {
+                    return this.nome;
+                };
+                this.setFuncao = function(value) {
+                    this.funcao = value;
+                };
+                this.getFuncao = function() {
+                    return this.funcao;
+                };
+            }
+
+            var funcionario3 = new Funcionario();
+            funcionario3.setMatricula(v_matricula);
+            funcionario3.setNome(v_nome);
+            funcionario3.setFuncao(v_funcao);
+            alert(`Matrícula: ${funcionario3.getMatricula()}\nNome: ${funcionario3.getNome()}\nFunção: ${funcionario3.getFuncao()}`);
+        </script>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Ricardo Gomes</p>
+    </footer>
+</body>
+</html>
