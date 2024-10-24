@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ricardo Gomes">
+    <title>Atividade 13</title>
+</head>
+<body>
+
+    <div onmouseout="Fechar(this)" onmousemove="Abrir(this)">
+        <h1>Abra a Janela</h1>
+        <img src="JanelaFechada.png" id="janela" onclick="Quebrar(this)">
+    </div>
+
+    <script>
+        var imagemJanela = document.getElementById("janela");
+
+        function Quebrar(obj) {
+            obj.parentElement.querySelector("h1").textContent = "Janela Quebrada";
+            imagemJanela.src = "JanelaQuebrada.png";
+        }
+
+        function Abrir(obj) {
+           
+            if (imagemJanela.src.includes("JanelaFechada.png")) {
+                obj.querySelector("h1").textContent = "Janela Aberta";
+                imagemJanela.src = "JanelaAberta.png";
+            }
+        }
+
+        function Fechar(obj) {
+            
+            if (imagemJanela.src.includes("JanelaAberta.png")) {
+                obj.querySelector("h1").textContent = "Janela Fechada";
+                imagemJanela.src = "JanelaFechada.png";
+            }
+        }
+    </script>
+</body>
+</html>
