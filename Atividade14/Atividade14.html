@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+    <script>
+        function transformarTexto() {
+            const textoInput = document.getElementById("texto");
+            const texto = textoInput.value;
+
+            // Verifica qual radio button está selecionado
+            const maiuscula = document.getElementById("maiuscula").checked;
+            const minuscula = document.getElementById("minuscula").checked;
+
+            if (maiuscula) {
+                textoInput.value = texto.toUpperCase(); // Transforma em maiúsculas
+            } else if (minuscula) {
+                textoInput.value = texto.toLowerCase(); // Transforma em minúsculas
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="principal" width="200" height="200" align="center">
+        Texto:
+        <input name="Texto" type="text" id="texto" size="52" maxlength="150">
+        <br>
+        <br>
+        
+        <input name="Maiuscula" type="radio" id="maiuscula" value="maiuscula"> Maiúscula
+        <br>
+        <br>
+        
+        <input name="Minuscula" type="radio" id="minuscula" value="minuscula"> Minúscula
+        <br>
+        <br>
+        
+        <button onclick="transformarTexto()">Transformar</button>
+    </div>
+</body>
+</html>
+
