@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Processo Administrativo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        /* Estilos já presentes */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .input-group div {
+            flex: 1;
+        }
+
+        input[type="text"], input[type="number"], input[type="datetime-local"], input[type="date"], select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .activity-list {
+            margin-top: 30px;
+        }
+
+        .activity {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .activity.expiring {
+            background-color: #ffcccc;
+        }
+
+        .activity.expired {
+            background-color: #f0f0f0;
+            text-decoration: line-through;
+        }
+
+        .activity button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .activity button:hover {
+            background-color: darkred;
+        }
+
+        .export-options {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .export-options label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .export-options input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .export-button {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .export-button:hover {
+            background-color: #0056b3;
+        }
+
+        .filter-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Processo Administrativo</h1>
+
+        <!-- Campos para adicionar novo processo -->
+        <div class="input-group">
+            <div>
+                <label for="processNumber">Número do Processo:</label>
+                <input type="number" id="processNumber" placeholder="Número do Processo" min="1" max="99999" required>
+            </div>
+            <div>
+                <label for="processYear">Ano:</label>
+                <input type="number" id="processYear" placeholder="Ano" min="1000" max="9999" required>
+            </div>
+        </div>
+
+        <div>
+            <label for="local">Local do Processo:</label>
+            <input type="text" id="local" placeholder="Local onde o processo se encontra" required>
+        </div>
+
+        <div>
+            <label for="expiryDate">Data de Expiração:</label>
+            <input type="datetime-local" id="expiryDate" required>
+        </div>
+
+        <button id="addProcessBtn">Adicionar Processo</button>
+
+        <!-- Filtros -->
+        <div>
+            <label for="filterInput">Filtrar por nome:</label>
+            <input type="text" id="filterInput" class="filter-input" placeholder="Filtrar processos">
+        </div>
+
+        <div>
+            <label for="filterDateInput">Filtrar por data de criação:</label>
+            <input type="date" id="filterDateInput" class="filter-input">
+        </div>
+
+        <!-- Exportação -->
+        <div class="export-options">
+            <div>
+                <label><input type="radio" name="exportType" value="pdf"> PDF</label>
+            </div>
+            <div>
+                <label><input type="radio" name="exportType" value="excel"> Planilha</label>
+            </div>
+        </div>
+
+        <button id="exportBtn" class="export-button">Exportar</button>
+
+        <!-- Lista de Processos -->
+        <div class="activity-list" id="processList"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
